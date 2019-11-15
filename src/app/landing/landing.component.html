@@ -1,68 +1,36 @@
 <div>
   <div class="main-header">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark px-0">
-        <a class="navbar-brand" routerLink="/">Crenzy</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/register">SignUp</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/deposit">Wallet</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-light my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
-    </div>
+    <app-header></app-header>
     <div class="container mt-5">
-      <h1 class="text-white">
-        Trade BTC, LTC, ETH with Tehran Stock Exchange
-      </h1>
-      <p class="text-lighter text-white">With the best automatic rates</p>
+      <h2
+        class="text-white"
+        [class.align-right]="textDir == 'right'"
+        style="padding-left: 10px;"
+      >
+        {{ 'landing.title' | translate }}
+      </h2>
+      <p
+        class="text-lighter text-white"
+        [class.align-right]="textDir == 'right'"
+        style="padding-left: 10px;"
+      >
+        {{ 'landing.subtitle' | translate }}
+      </p>
       <div class="box">
         <div class="row" style="position: relative;z-index: 100;">
-          <h2 class="text-white col-12 mb-4">Trade with fastest rates</h2>
+          <h3
+            class="text-white col-12 mb-4"
+            [class.align-right]="textDir == 'right'"
+          >
+            {{ 'landing.boxTitle' | translate }}
+          </h3>
           <div class="input-group col-12 col-md-5">
             <div class="input-group-prepend">
-              <span class="input-group-text">DEPOSIT</span>
+              <span class="input-group-text">
+                {{ 'landing.deposit' | translate }}
+              </span>
             </div>
-            <input
-              type="text"
-              aria-label="First name"
-              class="form-control h-100"
-            />
+            <input type="text" class="form-control h-100" />
             <select class="form-control h-100" id="exampleFormControlSelect1">
               <option>BTC</option>
               <option>ETH</option>
@@ -71,21 +39,21 @@
             </select>
           </div>
           <div class="col-2 m-auto img-change pointer btn_convert text-center">
-            <i
-              class="fas fa-exchange-alt fa-2x rotate "
-              style="color:#10d078;line-height:48px"
-              data-v-07d2f135=""
-            ></i>
+            <a (click)="changeType()" style="cursor: pointer;">
+              <i
+                class="fas fa-exchange-alt fa-2x rotate "
+                style="color:#10d078;line-height:48px"
+                data-v-07d2f135=""
+              ></i
+            ></a>
           </div>
           <div class="input-group col-12 col-md-5">
             <div class="input-group-prepend">
-              <span class="input-group-text">RECEIVE</span>
+              <span class="input-group-text">
+                {{ 'landing.receive' | translate }}
+              </span>
             </div>
-            <input
-              type="text"
-              aria-label="First name"
-              class="form-control h-100"
-            />
+            <input type="text" class="form-control h-100" />
             <select class="form-control h-100" id="exampleFormControlSelect1">
               <option>BTC</option>
               <option>ETH</option>
@@ -93,9 +61,40 @@
               <option>ZT</option>
             </select>
           </div>
+          <div class="trade-info col-12 my-4">
+            <table
+              class="table table-trade-info"
+              style="height:100%"
+              [class.table-right]="textDir == 'right'"
+            >
+              <tbody>
+                <tr>
+                  <td>{{ 'landing.rate' | translate }}</td>
+                  <td>
+                    <span>1.4</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>{{ 'landing.type' | translate }}</td>
+                  <td>
+                    <span> {{ 'landing.typeValue' | translate }} </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="uppercase">{{ 'landing.time' | translate }}</td>
+                  <td>
+                    <span>
+                      {{ 'landing.timeValue' | translate }}
+                    </span>
+                  </td>
+                </tr>
+                <!---->
+              </tbody>
+            </table>
+          </div>
           <div class="col-12 my-4">
             <button class="btn btn-success btn-block trade-button">
-              Trade
+              {{ 'landing.trade' | translate }}
             </button>
           </div>
         </div>
@@ -108,42 +107,30 @@
     <div class="container">
       <div class="row table-benefits text-center">
         <div class="col-md-4" style="padding:0 60px">
-          <h3 class="text-bold">Fair</h3>
+          <h3 class="text-bold">
+            {{ 'landing.benefits.fair.title' | translate }}
+          </h3>
           <div class="benif1-img"></div>
-          <!-- <p>
-            با منصفانه ترین قیمت ها ، از خدمات ما استفاده کنید . در حالی که
-            سخترین کارها را ما برایتان
-            انجام میدهیم
-          </p> -->
           <p>
-            With fairest prices, use our services. While we will do hardest
-            things for you.
-          </p>
-        </div>
-        <div class="col-md-4" style="padding:0 60px">
-          <h3 class="text-bold">Fast</h3>
-          <div class="benif2-img"></div>
-          <!-- <p>ما
-            در این مجموعه میکوشیم تا تمامی خدمات را در سریعترین زمان ممکن به شما
-            ارائه دهیم
-          </p> -->
-          <p>
-            We try to provide all services to you in fastest possible time.
+            {{ 'landing.benefits.fair.text' | translate }}
           </p>
         </div>
         <div class="col-md-4" style="padding:0 60px">
           <h3 class="text-bold">
-            Safe
+            {{ 'landing.benefits.fast.title' | translate }}
+          </h3>
+          <div class="benif2-img"></div>
+          <p>
+            {{ 'landing.benefits.fast.text' | translate }}
+          </p>
+        </div>
+        <div class="col-md-4" style="padding:0 60px">
+          <h3 class="text-bold">
+            {{ 'landing.benefits.safe.title' | translate }}
           </h3>
           <div class="benif3-img"></div>
-          <!-- <p>
-            ما تیمی هستیم که یکی از طولانی ترین رکورد ها را در ارائه این خدمات
-            دارا هستیم ، ما سابقه
-            خدمت رسانی بیش از چند هزار مشتری را داریم .
-          </p> -->
           <p>
-            We have one of the longest records in providing these services and
-            we have history of serving more than thousand of customers
+            {{ 'landing.benefits.safe.text' | translate }}
           </p>
         </div>
       </div>
@@ -164,30 +151,20 @@
           class="col-12 col-md-6 wallet_section d-flex justify-content-center align-items-center flex-column"
         >
           <h1 class="my-4 text-center" data-i18n="APP">
-            Wallet
+            {{ 'landing.wallet.title' | translate }}
           </h1>
           <h4
             class="d-none d-md-block my-4 pb-3 text-center"
             data-i18n="THE_ONLY_PLACE_TO_BUY_CRYPTO_AT_TRUE_COST"
           >
-            Buy 45+ Coins at True Cost<br />No fees, No markups
+            {{ 'landing.wallet.text' | translate }}
           </h4>
-          <h5
-            class="d-block d-md-none my-4 text-center"
-            data-i18n="THE_ONLY_PLACE_TO_BUY_CRYPTO_AT_TRUE_COST"
-          >
+          <h5 class="d-block d-md-none my-4 text-center">
             Buy 45+ Coins at True Cost<br />No fees, No markups
           </h5>
-          <a
-            alt="Crypto.com Wallet App"
-            href="/en/wallet.html"
-            dideo-checked="true"
-          >
-            <h5
-              class="mt-3 text-center font-blue index_explore"
-              data-i18n="LEARN_MORE"
-            >
-              Learn More
+          <a class="text-decoration-none" href="#" dideo-checked="true">
+            <h5 class="mt-3 text-center font-blue index_explore">
+              {{ 'landing.wallet.link' | translate }}
             </h5>
           </a>
           <div class="mx-3 pt-5 d-block d-md-none text-center">

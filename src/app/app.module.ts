@@ -16,9 +16,10 @@ import { LoginRoutingModule } from './login/login-routing-module';
 import { LoginComponent } from './login/login.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { DepositRoutingModule } from './deposit/deposit-routing-module';
+import { HeaderComponent } from './header/header.component';
 
-export function HttpLoaderFactory(httpClient: HttpClient) {
-   return new TranslateHttpLoader(httpClient);
+export function createTranslateLoader(http: HttpClient) {
+   return new TranslateHttpLoader(http,'./assets/i18n/','.json');
 }
 
 
@@ -28,7 +29,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       LandingComponent,
       RegisterComponent,
       LoginComponent,
-      DepositComponent
+      DepositComponent,
+      HeaderComponent
    ],
    imports: [
       BrowserModule,
@@ -41,7 +43,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       AutocompleteLibModule,
       LoginRoutingModule,
       DepositRoutingModule,
-      TranslateModule.forRoot(),
+      TranslateModule.forRoot({
+         loader: {
+            provide: TranslateLoader,
+            useFactory: createTranslateLoader,
+            deps: [HttpClient]
+         }
+      }),
    ],
    providers: [],
    bootstrap: [

@@ -8,7 +8,7 @@ export class LoginService {
     constructor(private http: HttpClient) { }
 
     getCustomer(headers) {
-        return this.http.get(`https://broker.ephoenix.ir/api/v1/Customer`,{
+        return this.http.get(`http://144.91.74.206:8080/api/assets`,{
             headers: headers
         });
     }

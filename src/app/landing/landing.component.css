@@ -103,3 +103,30 @@
 .trade-button {
   background-color: #10d078 !important;
 }
+
+.align-right {
+  text-align: right !important;
+}
+
+.table-trade-info {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.table-trade-info th,
+td {
+  border: none;
+}
+
+.table-right {
+  text-align: right !important;
+}
+
+.landing-inputs {
+  border: 1px solid transparent;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #fff;
+  -webkit-transition: none;
+  transition: none;
+  height: 40px;
+}

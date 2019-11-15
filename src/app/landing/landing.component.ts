@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { TranslateService,LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,17 @@ import { Component,OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private translate: TranslateService) { }
+  textDir;
   ngOnInit() {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      if (event.lang == 'fa') {
+        this.textDir = 'right';
+      }
+      else {
+        this.textDir = 'left';
+      }
+    });
   }
 
   keyword = 'name';
@@ -23,6 +32,14 @@ export class LandingComponent implements OnInit {
       name: 'England'
     }
   ];
+
+  changeLang(lang: string) {
+    this.translate.use(lang);
+  }
+
+  changeType() {
+
+  }
 
 
   selectEvent(item) {

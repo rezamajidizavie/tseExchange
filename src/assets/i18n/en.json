@@ -1,7 +1,45 @@
 {
-    "HOME": {
-      "TITLE": "Hello Angular with ngx-translate!",
-      "SELECT": "Change language"
+  "header": {
+    "title": "Crenzy",
+    "home": "Home",
+    "signup": "SignUp",
+    "login": "Login",
+    "wallet": "Wallet",
+    "language": "Language",
+    "en": "EN",
+    "fa": "FA",
+    "search": "Search"
+  },
+  "landing": {
+    "title": "Trade BTC, LTC, ETH with Tehran Stock Exchange",
+    "subtitle": "With the best automatic rates",
+    "boxTitle": "Trade with fastest rates",
+    "deposit": "Deposit",
+    "receive": "Receive",
+    "rate": "Trade rate",
+    "type": "Trade Type",
+    "time": "Trade Time",
+    "typeValue": "Deposit",
+    "timeValue": "24 Hours",
+    "trade": "Trade",
+    "benefits": {
+      "fair": {
+        "title": "Fair",
+        "text": "With fairest prices, use our services. While we will do hardest things for you."
+      },
+      "fast": {
+        "title": "Fast",
+        "text": "We try to provide all services to you in fastest possible time."
+      },
+      "safe": {
+        "title": "Safe",
+        "text": "We have one of the longest records in providing these services and we have history of serving more than thousand of customers."
+      }
+    },
+    "wallet": {
+      "title": "Wallet",
+      "text": "Deposit BTC, LTC and ETH safely and spend them later!",
+      "link": "Go to wallet page"
     }
   }
-s  
+}
