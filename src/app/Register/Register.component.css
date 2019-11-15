@@ -38,7 +38,7 @@
 
 .footer {
   height: auto;
-  padding: 35px;
+  padding-top: 35px;
   font-size: 12px;
   background: #fff;
   background-size: cover;
@@ -51,8 +51,8 @@
   background-position: right -4090px;
 }
 .hr-footer {
+  border-top: 4px solid #ccc;
   position: relative;
-  margin: 0;
 }
 .link-footer-social {
   font-size: 22px;
@@ -100,6 +100,11 @@
   z-index: 10;
 }
 
-.trade-button {
-  background-color: #10d078 !important;
+.register-inputs {
+  border: 1px solid transparent;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #fff;
+  -webkit-transition: none;
+  transition: none;
+  height: 50px;
 }

@@ -1,0 +1,111 @@
+<div>
+  <div class="main-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark px-0">
+        <a class="navbar-brand" href="#">Crenzy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register">SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/deposit">Wallet</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-light my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <div class="container mt-5 text-center">
+      <div class="box col-11 col-md-5 m-auto">
+        <div
+          class="row p-2 d-flex justify-content-center align-items-center"
+          style="position: relative;z-index: 100;"
+        >
+          <h2 class="text-white col-12 mb-4">Login</h2>
+          <form class="p-2 w-100" [formGroup]="form">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Username*"
+                class="form-control register-inputs"
+                formControlName="username"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted &&
+                    form.get('username').hasError('required')) ||
+                  (form.get('username').touched &&
+                    form.get('username').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger"
+                  >username is required</small
+                >
+              </span>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control register-inputs"
+                id="exampleInputPassword1"
+                placeholder="Password*"
+                formControlName="password"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted &&
+                    form.get('password').hasError('required')) ||
+                  (form.get('password').touched &&
+                    form.get('password').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger"
+                  >password is required</small
+                >
+              </span>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-block btn-primary"
+              (click)="login()"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="background-login-mask"></div>
+      </div>
+    </div>
+  </div>
+</div>

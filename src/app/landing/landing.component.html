@@ -2,7 +2,7 @@
   <div class="main-header">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark px-0">
-        <a class="navbar-brand" href="#">Crenzy</a>
+        <a class="navbar-brand" routerLink="/">Crenzy</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -18,36 +18,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
+              <a class="nav-link" routerLink="/"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">SignUp</a>
+              <a class="nav-link" routerLink="/register">SignUp</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" routerLink="/login">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Wallet</a>
+              <a class="nav-link" routerLink="/deposit">Wallet</a>
             </li>
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1"
-                aria-disabled="true">Disabled</a>
-            </li> -->
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input
@@ -69,12 +52,59 @@
       </h1>
       <p class="text-lighter text-white">With the best automatic rates</p>
       <div class="box">
-        <h2 class="text-white h2-landing">Trade with fastest rates</h2>
+        <div class="row" style="position: relative;z-index: 100;">
+          <h2 class="text-white col-12 mb-4">Trade with fastest rates</h2>
+          <div class="input-group col-12 col-md-5">
+            <div class="input-group-prepend">
+              <span class="input-group-text">DEPOSIT</span>
+            </div>
+            <input
+              type="text"
+              aria-label="First name"
+              class="form-control h-100"
+            />
+            <select class="form-control h-100" id="exampleFormControlSelect1">
+              <option>BTC</option>
+              <option>ETH</option>
+              <option>LTC</option>
+              <option>ZT</option>
+            </select>
+          </div>
+          <div class="col-2 m-auto img-change pointer btn_convert text-center">
+            <i
+              class="fas fa-exchange-alt fa-2x rotate "
+              style="color:#10d078;line-height:48px"
+              data-v-07d2f135=""
+            ></i>
+          </div>
+          <div class="input-group col-12 col-md-5">
+            <div class="input-group-prepend">
+              <span class="input-group-text">RECEIVE</span>
+            </div>
+            <input
+              type="text"
+              aria-label="First name"
+              class="form-control h-100"
+            />
+            <select class="form-control h-100" id="exampleFormControlSelect1">
+              <option>BTC</option>
+              <option>ETH</option>
+              <option>LTC</option>
+              <option>ZT</option>
+            </select>
+          </div>
+          <div class="col-12 my-4">
+            <button class="btn btn-success btn-block trade-button">
+              Trade
+            </button>
+          </div>
+        </div>
         <div class="background-login-mask"></div>
       </div>
     </div>
   </div>
-  <div id="benefits" class="mt-5">
+
+  <div id="benefits" class="my-5 ">
     <div class="container">
       <div class="row table-benefits text-center">
         <div class="col-md-4" style="padding:0 60px">
@@ -119,13 +149,65 @@
       </div>
     </div>
   </div>
+
+  <div class="bg-light">
+    <div class="container" style="padding: 30px 0 0;">
+      <div class="row">
+        <div class="d-none d-md-block col-6">
+          <img
+            src="../../assets/img/iphonex.png"
+            style="width: 100%;"
+            alt="Index wallet iphonex"
+          />
+        </div>
+        <div
+          class="col-12 col-md-6 wallet_section d-flex justify-content-center align-items-center flex-column"
+        >
+          <h1 class="my-4 text-center" data-i18n="APP">
+            Wallet
+          </h1>
+          <h4
+            class="d-none d-md-block my-4 pb-3 text-center"
+            data-i18n="THE_ONLY_PLACE_TO_BUY_CRYPTO_AT_TRUE_COST"
+          >
+            Buy 45+ Coins at True Cost<br />No fees, No markups
+          </h4>
+          <h5
+            class="d-block d-md-none my-4 text-center"
+            data-i18n="THE_ONLY_PLACE_TO_BUY_CRYPTO_AT_TRUE_COST"
+          >
+            Buy 45+ Coins at True Cost<br />No fees, No markups
+          </h5>
+          <a
+            alt="Crypto.com Wallet App"
+            href="/en/wallet.html"
+            dideo-checked="true"
+          >
+            <h5
+              class="mt-3 text-center font-blue index_explore"
+              data-i18n="LEARN_MORE"
+            >
+              Learn More
+            </h5>
+          </a>
+          <div class="mx-3 pt-5 d-block d-md-none text-center">
+            <img
+              src="../../assets/img/iphonex.png"
+              style="width: 310px; margin: 0 auto;"
+              alt="Index wallet iphonex"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="footer">
     <hr class="hr-footer" />
     <div class="footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-3 col-xs-6">
-            <div class="logo--footer"></div>
             <div style="margin-top:20px">
               <a
                 href="#"
@@ -147,7 +229,7 @@
               </a>
             </div>
             <div>
-              <p style="margin-top:20px;font-size:12px">© 2015-2019 crenzy</p>
+              <p style="margin-top:20px;font-size:12px">© 2019 crenzy</p>
             </div>
           </div>
           <div class="col-sm-3 col-xs-6">

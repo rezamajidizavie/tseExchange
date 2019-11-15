@@ -1,0 +1,168 @@
+<div>
+  <div class="main-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark px-0">
+        <a class="navbar-brand" href="#">Crenzy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register">SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/deposit">Wallet</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-light my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <div class="container mt-5 text-center">
+      <div class="box col-11 col-md-5 m-auto">
+        <div
+          class="row p-2 d-flex justify-content-center align-items-center"
+          style="position: relative;z-index: 100;"
+        >
+          <h2 class="text-white col-12 mb-4">Register</h2>
+          <form class="p-2 w-100" [formGroup]="form">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Email*"
+                class="form-control register-inputs"
+                formControlName="email"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted && form.get('email').hasError('required')) ||
+                  (form.get('email').touched &&
+                    form.get('email').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger">Email is required</small>
+              </span>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="First Name*"
+                class="form-control register-inputs"
+                formControlName="firstName"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted &&
+                    form.get('firstName').hasError('required')) ||
+                  (form.get('firstName').touched &&
+                    form.get('firstName').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger"
+                  >firstName is required</small
+                >
+              </span>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Last Name*"
+                class="form-control register-inputs"
+                formControlName="lastName"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted &&
+                    form.get('lastName').hasError('required')) ||
+                  (form.get('lastName').touched &&
+                    form.get('lastName').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger"
+                  >lastName is required</small
+                >
+              </span>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Username*"
+                class="form-control register-inputs"
+                formControlName="userName"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted &&
+                    form.get('userName').hasError('required')) ||
+                  (form.get('userName').touched &&
+                    form.get('userName').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger"
+                  >userName is required</small
+                >
+              </span>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control register-inputs"
+                id="exampleInputPassword1"
+                placeholder="Password*"
+                formControlName="password"
+              />
+              <span
+                *ngIf="
+                  (formSubmitted &&
+                    form.get('password').hasError('required')) ||
+                  (form.get('password').touched &&
+                    form.get('password').hasError('required'))
+                "
+              >
+                <small class="form-text text-danger"
+                  >password is required</small
+                >
+              </span>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-block btn-primary"
+              (click)="register()"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="background-login-mask"></div>
+      </div>
+    </div>
+  </div>
+</div>
