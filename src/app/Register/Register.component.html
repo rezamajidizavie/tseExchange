@@ -8,12 +8,14 @@
           class="row p-2 d-flex justify-content-center align-items-center"
           style="position: relative;z-index: 100;"
         >
-          <h2 class="text-white col-12 mb-4">Register</h2>
-          <form class="p-2 w-100" [formGroup]="form">
+          <h2 class="text-white col-12 mb-4">
+            {{ 'register.title' | translate }}
+          </h2>
+          <form class="p-2 w-100" [formGroup]="form" *ngIf="!registerDone">
             <div class="form-group">
               <input
                 type="text"
-                placeholder="Email*"
+                placeholder="{{ 'register.email' | translate }}*"
                 class="form-control register-inputs"
                 formControlName="email"
               />
@@ -24,13 +26,15 @@
                     form.get('email').hasError('required'))
                 "
               >
-                <small class="form-text text-danger">Email is required</small>
+                <small class="form-text text-danger">{{
+                  'register.validations.email' | translate
+                }}</small>
               </span>
             </div>
             <div class="form-group">
               <input
                 type="text"
-                placeholder="First Name*"
+                placeholder="{{ 'register.firstName' | translate }}*"
                 class="form-control register-inputs"
                 formControlName="firstName"
               />
@@ -42,15 +46,15 @@
                     form.get('firstName').hasError('required'))
                 "
               >
-                <small class="form-text text-danger"
-                  >firstName is required</small
-                >
+                <small class="form-text text-danger">{{
+                  'register.validations.firstName' | translate
+                }}</small>
               </span>
             </div>
             <div class="form-group">
               <input
                 type="text"
-                placeholder="Last Name*"
+                placeholder="{{ 'register.lastName' | translate }}*"
                 class="form-control register-inputs"
                 formControlName="lastName"
               />
@@ -62,15 +66,15 @@
                     form.get('lastName').hasError('required'))
                 "
               >
-                <small class="form-text text-danger"
-                  >lastName is required</small
-                >
+                <small class="form-text text-danger">{{
+                  'register.validations.lastName' | translate
+                }}</small>
               </span>
             </div>
             <div class="form-group">
               <input
                 type="text"
-                placeholder="Username*"
+                placeholder="{{ 'register.username' | translate }}*"
                 class="form-control register-inputs"
                 formControlName="login"
               />
@@ -81,9 +85,9 @@
                     form.get('login').hasError('required'))
                 "
               >
-                <small class="form-text text-danger"
-                  >userName is required</small
-                >
+                <small class="form-text text-danger">{{
+                  'register.validations.username' | translate
+                }}</small>
               </span>
             </div>
             <div class="form-group">
@@ -91,7 +95,7 @@
                 type="password"
                 class="form-control register-inputs"
                 id="exampleInputPassword1"
-                placeholder="Password*"
+                placeholder="{{ 'register.password' | translate }}*"
                 formControlName="password"
               />
               <span
@@ -102,9 +106,9 @@
                     form.get('password').hasError('required'))
                 "
               >
-                <small class="form-text text-danger"
-                  >password is required</small
-                >
+                <small class="form-text text-danger">{{
+                  'register.validations.password' | translate
+                }}</small>
               </span>
             </div>
             <button
@@ -112,9 +116,17 @@
               class="btn btn-block btn-primary"
               (click)="register()"
             >
-              Submit
+              {{ 'register.submit' | translate }}
             </button>
           </form>
+          <div *ngIf="registerDone">
+            <p class="text-white">
+              {{ 'register.success' | translate }}
+            </p>
+            <button class="btn btn-info">
+              {{ 'register.login' | translate }}
+            </button>
+          </div>
         </div>
         <div class="background-login-mask"></div>
       </div>

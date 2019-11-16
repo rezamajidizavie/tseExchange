@@ -16,6 +16,7 @@ import { RegisterService } from './register.service';
 export class RegisterComponent implements OnInit {
   form: FormGroup;
   formSubmitted = false;
+  registerDone = false;
   constructor(private fb: FormBuilder,private registerService: RegisterService) { }
 
   ngOnInit() {

@@ -7,12 +7,15 @@
           class="row p-2 d-flex justify-content-center align-items-center"
           style="position: relative;z-index: 100;"
         >
-          <h2 class="text-white col-12 mb-4">Login</h2>
+          <h2 class="text-white col-12 mb-4">
+            {{ 'login.title' | translate }}
+          </h2>
+
           <form class="p-2 w-100" [formGroup]="form">
             <div class="form-group">
               <input
                 type="text"
-                placeholder="Username*"
+                placeholder="{{ 'login.username' | translate }}*"
                 class="form-control register-inputs"
                 formControlName="username"
               />
@@ -24,9 +27,9 @@
                     form.get('username').hasError('required'))
                 "
               >
-                <small class="form-text text-danger"
-                  >username is required</small
-                >
+                <small class="form-text text-danger">{{
+                  'login.validations.username' | translate
+                }}</small>
               </span>
             </div>
             <div class="form-group">
@@ -34,7 +37,7 @@
                 type="password"
                 class="form-control register-inputs"
                 id="exampleInputPassword1"
-                placeholder="Password*"
+                placeholder="{{ 'login.password' | translate }}*"
                 formControlName="password"
               />
               <span
@@ -45,9 +48,9 @@
                     form.get('password').hasError('required'))
                 "
               >
-                <small class="form-text text-danger"
-                  >password is required</small
-                >
+                <small class="form-text text-danger">{{
+                  'login.validations.password' | translate
+                }}</small>
               </span>
             </div>
             <button
@@ -55,7 +58,7 @@
               class="btn btn-block btn-primary"
               (click)="login()"
             >
-              Submit
+              {{ 'login.submit' | translate }}
             </button>
           </form>
         </div>

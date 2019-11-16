@@ -19,6 +19,10 @@ export class LandingComponent implements OnInit {
         this.textDir = 'left';
       }
     });
+
+    if (this.translate.currentLang == 'fa') {
+      this.textDir = 'right';
+    }
   }
 
   keyword = 'name';

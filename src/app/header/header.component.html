@@ -53,6 +53,7 @@
               class="dropdown-item"
               (click)="changeLang('en')"
               style="cursor: pointer;"
+              [class.align-right]="textDir == 'right'"
             >
               {{ 'header.en' | translate }}</a
             >
@@ -60,6 +61,7 @@
               class="dropdown-item"
               (click)="changeLang('fa')"
               style="cursor: pointer;"
+              [class.align-right]="textDir == 'right'"
             >
               {{ 'header.fa' | translate }}</a
             >

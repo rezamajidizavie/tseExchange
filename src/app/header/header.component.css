@@ -6,3 +6,6 @@
   transition: none;
   height: 40px;
 }
+.align-right {
+  text-align: right !important;
+}
